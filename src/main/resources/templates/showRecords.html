@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1">
+    <title>Title</title>
+    <style>
+        /* Table Head */
+        thead th {
+            background-color: rgb(128, 102, 160);
+            color: #fff;
+            border-bottom-width: 0;
+        }
+
+        /* Column Style */
+        td {
+            color: #000;
+        }
+        /* Heading and Column Style */
+        tr, th {
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgb(128, 102, 160);
+        }
+
+        /* Padding and font style */
+        td, th {
+            padding: 5px 10px;
+            font-size: 14px;
+            font-family: Verdana;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>sendTime</th>
+            <th>phone</th>
+            <th>text</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="record:${records}">
+            <td th:text="${record.getId()}"></td>
+            <td th:text="${record.getSendTime()}"></td>
+            <td th:text="${record.getPhone()}"></td>
+            <td th:text="${record.getText()}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
